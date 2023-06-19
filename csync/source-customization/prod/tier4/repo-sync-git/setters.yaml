@@ -9,9 +9,9 @@ data:
   ## project-id
   project-id: project-id-12345
    ## Folder: 'tier3' or 'tier4'
-  folder: tier3
-  # set git repo values
+  folder: tier4
+  # Git repo values
   repo-url: https://AZDO-ORG@dev.azure.com/AZDO-ORG/AZDO-PROJECT/_git/REPO-NAME
   # repo-url: https://github.com/GITHUB-ORG/REPO-NAME # Alternate, GitHub
   repo-branch: main
-  repo-dir: tier3/deploy/env
+  repo-dir: tier4/deploy/prod
