@@ -1,0 +1,18 @@
+# Repo sync
+apiVersion: configsync.gke.io/v1beta1
+kind: RepoSync
+metadata:
+  # name combined with namespace must not exceed 63 characters
+  # name: folder # kpt-set: ${folder}
+  name: repo-sync
+  namespace: dldmu-consol-onlineboutique-tier4 # kpt-set: ${project-id}-${folder}
+spec:
+  sourceFormat: unstructured
+  git:
+    repo: https://gc-cpa@dev.azure.com/gc-cpa/iac-gcp-dev/_git/dl-gcp-dlxmu-consol-onlineboutique-tier34 # kpt-set: ${repo-url}
+    branch: main # kpt-set: ${repo-branch}
+    dir: tier4/configcontroller/deploy/dev # kpt-set: ${repo-dir}
+    revision: HEAD # kpt-set: ${version}
+    auth: token
+    secretRef:
+      name: git-creds

@@ -1,0 +1,19 @@
+# set repo sync
+apiVersion: configsync.gke.io/v1beta1
+kind: RepoSync
+metadata:
+  # name combined with namespace must not exceed 63 characters
+  name: repo-sync
+  namespace: onlineboutique # kpt-set: ${namespace}
+  annotations:
+    configsync.gke.io/cluster-name-selector: autopilot1-gke
+spec:
+  sourceFormat: unstructured
+  git:
+    repo: https://gc-cpa@dev.azure.com/gc-cpa/iac-gcp-dev/_git/dl-gcp-dlxmu-consol-onlineboutique-tier34 # kpt-set: ${repo-url}
+    branch: main # kpt-set: ${repo-branch}
+    dir: tier4/kubernetes/dlxmu-consol-ssc-spc-gke1/deploy/dev/onlineboutique # kpt-set: ${repo-dir}
+    revision: HEAD # kpt-set: ${version}
+    auth: token
+    secretRef:
+      name: git-creds

@@ -1,0 +1,5 @@
+# K8S namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: namespace # kpt-set: ${namespace}

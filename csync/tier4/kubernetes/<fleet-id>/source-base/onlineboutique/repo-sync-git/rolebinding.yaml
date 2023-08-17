@@ -1,0 +1,14 @@
+# Repo sync role binding requirement
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata: # kpt-merge: project-id-tier3/syncs-repo
+  name: syncs-repo
+  namespace: namespace # kpt-set: ${namespace}
+subjects:
+  - kind: ServiceAccount
+    name: ns-reconciler-namespace # kpt-set: ns-reconciler-${namespace}
+    namespace: config-management-system
+roleRef:
+  kind: ClusterRole
+  name: admin
+  apiGroup: rbac.authorization.k8s.io
