@@ -1,7 +1,0 @@
-# K8S namespace
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: onlineboutique # kpt-set: ${namespace}
-  annotations:
-    configsync.gke.io/cluster-name-selector: autopilot1-gke
