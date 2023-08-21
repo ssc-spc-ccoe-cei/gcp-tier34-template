@@ -3,7 +3,7 @@
 A repository that includes YAML manifests. Manifests can define GCP resources in `config connector` format or the Kubernetes components and resources. Refer to this repo for additionnal information. TODO: add link
 
 The `/*/configcontroller` folder is where GCP resources are defined using their `config connector` schema.
-The `/*/kubernetes/<fleet-id>/**/<namespace>` folder is where resources that have to be provisionned in a kubernetes `namespace` are defined. The `fleet-id` is the GCP project-id where the kubernetes clusters are deployed.
+The `/*/kubernetes/<x-fleet-id>/**/<namespace>` folder is where resources that have to be provisionned in a kubernetes `namespace` are defined. The `x-fleet-id` is the GCP project-id where the kubernetes clusters are deployed with character "x" as the environment code because this folder will contain the configuration for all environments.
 
 ## csync
 
@@ -35,7 +35,8 @@ Permissions:
 ## tier4
 
 The `/tier4/configcontroller` folder is where application resources that have to be provisionned in the GCP project are defined.
-The `/tier4/kubernetes/<fleet-id>/**/<namespace>` folder is where resources that have to be provisionned in a kubernetes namespace are defined.
+The `/tier4/kubernetes/<x-fleet-id>/**/<namespace>` folder is where resources that have to be provisionned in a kubernetes namespace are defined.
+>> Replace `<x-fleet-id>` with fleet-id and character "x" as the environment code because this folder will contain the configuration for all environments.
 
 Contributing:
 
