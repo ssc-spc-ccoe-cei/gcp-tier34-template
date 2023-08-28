@@ -1,7 +1,7 @@
 # Repo sync role binding requirement
 kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
-metadata: # kpt-merge: project-id-tier3/syncs-repo
+metadata:
   name: syncs-repo
   namespace: namespace # kpt-set: ${namespace}
 subjects:
