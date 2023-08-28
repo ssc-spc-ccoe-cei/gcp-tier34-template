@@ -7,6 +7,12 @@ metadata:
   namespace: namespace # kpt-set: ${namespace}
 spec:
   sourceFormat: unstructured
+  override:
+    resources:
+      - containerName: "reconciler"
+        cpuLimit: "800m"
+        memoryLimit: "800Mi"
+        memoryRequest: "500Mi"
   git:
     repo: https://AZDO-ORG@dev.azure.com/AZDO-ORG/AZDO-PROJECT/_git/REPO-NAME # kpt-set: ${repo-url}
     branch: main # kpt-set: ${repo-branch}
