@@ -59,7 +59,7 @@ The `/tier3` folder is where security and networking resources that enables the 
 
 ## Branch Protection
 
-The main branch of this repository is protected meaning that pushing new commit to it will be denied. To implement changes, A Pull Request has to be completed.
+The main branch of this repository is protected meaning that pushing a new commit to it will be denied. To implement changes, A Pull Request has to be completed.
 
-Every other branches configured to be observed by ConfigSync will also have a a branch protection rule defined.
+Every other branches configured to be observed by ConfigSync will also have a branch protection rule defined.
 TODO: add more details
