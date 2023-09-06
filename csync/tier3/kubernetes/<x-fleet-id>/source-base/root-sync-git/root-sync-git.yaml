@@ -1,0 +1,22 @@
+# Root Sync
+apiVersion: configsync.gke.io/v1beta1
+kind: RootSync
+metadata:
+  name: id-t3 # kpt-set: ${id}-t3
+  namespace: config-management-system
+spec:
+  sourceFormat: unstructured
+  override:
+    resources:
+      - containerName: "reconciler"
+        cpuLimit: "800m"
+        memoryLimit: "800Mi"
+        memoryRequest: "500Mi"
+  git:
+    repo: https://AZDO-ORG@dev.azure.com/AZDO-ORG/AZDO-PROJECT/_git/REPO-NAME # kpt-set: ${repo-url}
+    branch: main # kpt-set: ${repo-branch}
+    dir: tier3/kubernetes/<x-fleet-id>/deploy/<env> # kpt-set: ${repo-dir}
+    revision: HEAD # kpt-set: ${version}
+    auth: token
+    secretRef:
+      name: git-creds
