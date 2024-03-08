@@ -14,4 +14,4 @@ data:
   # repo-url: https://github.com/GITHUB-ORG/REPO-NAME # Alternate, GitHub
   repo-branch: main
   # The `x-fleet-id` is the GCP project-id where the kubernetes clusters are deployed with character "x" as the environment code because this folder will contain the configuration for all environments.
-  repo-dir: tier3/kubernetes/<x-fleet-id>/deploy/preprod
+  repo-dir: tier3/kubernetes/_X-FLEET-ID/deploy/preprod
