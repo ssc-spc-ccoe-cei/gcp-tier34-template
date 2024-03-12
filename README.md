@@ -3,7 +3,7 @@
 A repository that includes YAML manifests. Manifests can define GCP resources in `config connector` format or the Kubernetes components and resources. Refer to this repo for additional information. TODO: add link
 
 - The `/*/configcontroller` folder is where GCP resources are defined using their `config connector` schema.
-- The `/*/kubernetes/_X-FLEET-ID/**/<namespace>` folder is where resources that have to be provisioned in a kubernetes `namespace` are defined. The `_X-FLEET-ID` is the GCP project-id where the kubernetes clusters are deployed with character "x" as the environment code because this folder will contain the configuration for all environments.
+- The `/*/kubernetes/_X-FLEET-ID/**/_NAMESPACE` folder is where resources that have to be provisioned in a kubernetes `namespace` are defined. The `_X-FLEET-ID` is the GCP project-id where the kubernetes clusters are deployed with character "x" as the environment code because this folder will contain the configuration for all environments.
 
   The GKE clusters are joined to an [Anthos Fleet](https://cloud.google.com/anthos/fleet-management/docs). This enables Anthos policy controller, Anthos config management and Anthos service mesh(future).
 
@@ -38,9 +38,9 @@ The `/tier3` folder is where security and networking resources that enables the 
 
 - The `/tier4/architecture` folder is where you can store **design** documents describing your application. These will be reviewed by the security admins and the platform admins when you will submit a pull request affecting `tier3`.
 - The `/tier4/configcontroller` folder is where application resources that have to be provisioned in the GCP project are defined.
-- The `/tier4/kubernetes/<x-fleet-id>/**/<namespace>` folder is where resources that have to be provisioned in a kubernetes namespace are defined.
+- The `/tier4/kubernetes/_X-FLEET-ID/**/_NAMESPACE` folder is where resources that have to be provisioned in a kubernetes namespace are defined.
 
->> Replace `<x-fleet-id>` with fleet-id and character "x" as the environment code because this folder will contain the configuration for all environments.
+>> Replace `_X-FLEET-ID` with fleet-id and character "x" as the environment code because this folder will contain the configuration for all environments.
 
 ### Contributing
 
