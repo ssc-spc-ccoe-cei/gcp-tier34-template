@@ -37,8 +37,8 @@ The `/tier3` folder is where security and networking resources that enables the 
 ## tier4
 
 - The `/tier4/architecture` folder is where you can store **design** documents describing your application. These will be reviewed by the security admins and the platform admins when you will submit a pull request affecting `tier3`.
-- The `/tier4/configcontroller` folder is where application resources that have to be provisionned in the GCP project are defined.
-- The `/tier4/kubernetes/<x-fleet-id>/**/<namespace>` folder is where resources that have to be provisionned in a kubernetes namespace are defined.
+- The `/tier4/configcontroller` folder is where application resources that have to be provisioned in the GCP project are defined.
+- The `/tier4/kubernetes/<x-fleet-id>/**/<namespace>` folder is where resources that have to be provisioned in a kubernetes namespace are defined.
 
 >> Replace `<x-fleet-id>` with fleet-id and character "x" as the environment code because this folder will contain the configuration for all environments.
 
