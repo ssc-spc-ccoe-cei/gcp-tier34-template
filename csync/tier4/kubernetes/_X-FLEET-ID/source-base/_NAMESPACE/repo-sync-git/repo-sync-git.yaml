@@ -1,0 +1,24 @@
+# set repo sync
+apiVersion: configsync.gke.io/v1beta1
+kind: RepoSync
+metadata:
+  # name combined with namespace must not exceed 63 characters
+  name: repo-sync
+  namespace: namespace # kpt-set: ${namespace}
+spec:
+  sourceFormat: unstructured
+  override:
+    resources:
+      - containerName: "reconciler"
+        cpuLimit: "800m"
+        memoryLimit: "800Mi"
+        memoryRequest: "500Mi"
+  git:
+    repo: https://AZDO-ORG@dev.azure.com/AZDO-ORG/AZDO-PROJECT/_git/REPO-NAME # kpt-set: ${repo-url}
+    branch: main # kpt-set: ${repo-branch}
+    # The `x-fleet-id` is the GCP project-id where the kubernetes clusters are deployed with character "x" as the environment code because this folder will contain the configuration for all environments.
+    dir: tier4/kubernetes/_X-FLEET-ID/namespace/deploy/<env>/<namespace> # kpt-set: ${repo-dir}
+    revision: 0.0.0 # kpt-set: ${version}
+    auth: token
+    secretRef:
+      name: git-creds
